@@ -45,7 +45,10 @@ $CAFFE2_ROOT/scripts/build_host_protoc.sh || exit 1
 # Now, actually build the android target.
 echo "Building caffe2"
 cd $BUILD_ROOT
-
+#
+#armeabi-v7a, armeabi-v7a with NEON, arm64-v8a
+#
+#
 cmake .. \
     -DCMAKE_TOOLCHAIN_FILE=../third_party/android-cmake/android.toolchain.cmake \
     -DCMAKE_INSTALL_PREFIX=../install \

@@ -6,11 +6,9 @@
 #include <numeric>
 
 // Common code that we use regardless of whether we use glog or not.
-
 CAFFE2_DEFINE_bool(caffe2_use_fatal_for_enforce, false,
                    "If set true, when CAFFE_ENFORCE is not met, abort instead "
                    "of throwing an exception.");
-
 namespace caffe2 {
 std::string StripBasename(const std::string &full_path) {
   const char kSeparator = '/';

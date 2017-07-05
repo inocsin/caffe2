@@ -86,11 +86,12 @@ if (ANDROID OR IOS)
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/neon/blas/s4c2gemm-conjb-transc.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/neon/blas/sgemm.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/neon/blas/sdotxf.c
+	  ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/neon/2d-winograd-8x8-3x3.c
       # nnpack files
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/init.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/convolution-output.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/convolution-input-gradient.c
-      ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/convolution-kernel.c
+      ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/convolution-kernel-gradient.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/convolution-inference.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/fully-connected-output.c
       ${CAFFE2_THIRD_PARTY_ROOT}/NNPACK/src/fully-connected-inference.c
@@ -117,6 +118,8 @@ if (ANDROID OR IOS)
   if (ANDROID)
     set(NNPACK_LIBRARIES ${NNPACK_LIBRARIES} cpufeatures)
   endif()
+  message(STATUS "NNPACK_INCLUDE_IDRS = ${NNPACK_INCLUDE_DIRS}")
+  message(STATUS "NNPACK_LIBRARIES = ${NNPACK_LIBRARIES}")
   return()
 endif()
 
